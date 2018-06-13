@@ -1,0 +1,25 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0; }
+
+.card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  padding: 8px 16px; }
+
+.toolbar {
+  position: fixed;
+  width: 100%;
+  height: 64px;
+  background-color: #00a39e;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26); }
+  .toolbar h1 {
+    display: inline-block;
+    height: 64px;
+    line-height: 64px;
+    margin: 0;
+    padding-left: 16px; }
+
+.copyright-notice {
+  font-size: small;
+  padding-left: 16px; }

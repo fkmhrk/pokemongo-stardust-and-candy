@@ -4,35 +4,47 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> 
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <title>Stardust and candy</title>
 </head>
 <body>
 
 <section id="container"></section>
 <script id="template" type="text/ractive">
-  <h1>ほしのすなとアメ</h1>
-  <section>
-  <h2>現在必要としているほしのすな</h2>
-  <select value="{{now}}">
-  {{#stardusts:i}}
-  {{#if .candy < 99}}<option value="{{i}}">{{.stardust}}</option>{{/if}}
-  {{/}}
-  </select>
+  <header class="toolbar">
+    <h1>ほしのすなとアメ</h1>
+  </header>
+  <div style="height:64px"></div>
 
-  <h2>目標</h2>
-  <select value="{{target}}">
-  {{#stardusts:i}}
-  {{#if i > now}}<option value="{{i}}">{{#if .candy==99}}MAX{{else}}{{.stardust}}{{/if}}</option>{{/if}}
-  {{/}}
-  </select>
+  <section class="card">
+    <div style="display:inline-block">
+    <label for="now">現在</label>
+    <select id="now" value="{{now}}">
+    {{#stardusts:i}}
+    {{#if .candy < 99}}<option value="{{i}}">{{.stardust}}</option>{{/if}}
+    {{/}}
+    </select>
+    </div>
+
+    <div style="display:inline-block">
+    <label>目標</label>
+    <select value="{{target}}">
+    {{#stardusts:i}}
+    {{#if i > now}}<option value="{{i}}">{{#if .candy==99}}MAX{{else}}{{.stardust}}{{/if}}</option>{{/if}}
+    {{/}}
+    </select>
+    </div>
+
   </section>
 
-  <section>
+  <section class="card">
   <h2>必要なほしのすな</h2>
   <p>{{calcStardust(now, target)}}</p>
   <h2>必要なアメ</h2>
   <p>{{calcCandy(now, target)}}</p>
   </section>
+
+  <p class="copyright-notice">※データの著作権は運営元・開発元に帰属します</p>
 </script>
 
 <script src="ractive.js"></script>
