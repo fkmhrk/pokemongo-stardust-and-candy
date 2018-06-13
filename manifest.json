@@ -5,7 +5,7 @@
         "src": "images/icon_512x512.png",  
         "sizes": "512x512"
       }],  
-  "start_url": "/",  
+  "start_url": "/pokemongo-stardust-and-candy/",  
   "display": "standalone",
   "theme_color": "#00A39E"
 }
