@@ -1,5 +1,11 @@
 /// <reference path="./ractive.d.ts"/>
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js');
+  });
+}
+
 class Item {
     candy: number;
     stardust: number;
